@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = var.organization
+    organization = "AWS_Tulip"
     workspaces {
       name = "tulip-base"
     }
