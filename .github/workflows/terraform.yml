@@ -52,9 +52,9 @@ jobs:
       - name: Terraform Plan
         env:
           TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-        run: terraform plan -out=tfplan
+        run: terraform plan
 
       - name: Terraform Apply
         env:
           TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-        run: terraform apply -auto-approve tfplan
+        run: terraform apply -auto-approve
