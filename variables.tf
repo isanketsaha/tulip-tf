@@ -8,11 +8,6 @@ variable "aws_secret_access_key" {
   type        = string
 }
 
-variable "aws_session_token"{
-  description = "AWS Session Key"
-  type        = string
-}
-
 
 variable "aws_account"{
   description = "AWS account"
