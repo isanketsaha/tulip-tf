@@ -39,9 +39,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v2  # Updated to v2
         with:
-          terraform_version: 1.0.0
+          terraform_version: 1.5.0  # Use a newer version that fully supports the cloud block
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}  # Pass the token directly
 
       - name: Terraform Init
         env:
@@ -51,7 +52,7 @@ jobs:
       - name: Terraform Plan
         env:
           TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-        run: terraform plan -out=tfplan
+        run: terraform plan
 
       - name: Terraform Apply
         env:
